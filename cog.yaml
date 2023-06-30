@@ -1,0 +1,47 @@
+# Configuration for Cog ⚙️
+# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+
+build:
+  # set to true if your model requires a GPU
+  gpu: true
+  cuda: '11.7'
+
+  # a list of ubuntu apt packages to install
+  system_packages:
+   - "python3-opencv"
+
+  # python version in the form '3.8' or '3.8.12'
+  python_version: "3.8"
+
+  # a list of packages in the format <package-name>==<version>
+  python_packages:
+   - "imgui"
+   - "glfw" 
+   - "pyspng" 
+   - "Cython"
+   - "mrcfile"
+   - "ninja" 
+   - "plyfile"
+   - "trimesh"
+   - "onnxruntime"
+   - "onnx"
+   - "torch"
+   - "torchvision"
+   - "opencv-python==4.7.0.72"
+   - "imageio-ffmpeg"
+   - "dlib"
+   - "tqdm"
+   - "scipy"
+   - "Pillow"
+   - "click"
+   - "imageio"
+   - "matplotlib"
+   - "numpy==1.23.5"
+  # commands run after the environment is setup
+  #run:
+  #  - "cd 3DDFA_V2"
+  #  - "sh ./build.sh"
+
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"
+image: "r8.im/pablodawson/panohead"
